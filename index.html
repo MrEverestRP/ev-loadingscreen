@@ -1,0 +1,84 @@
+<!--
+
+    Copyright (c) 2021 Toujou Studios
+    Made by IanToujou using Bootstrap
+
+    If you encounter any issues or have any questions,
+    take a look at this project's Github page:
+    https://github.com/IanToujou/FiveM-Modern-Loadingscreen
+
+    You are free to use this asset under the GPL 3.0 License.
+    https://github.com/IanToujou/FiveM-Modern-Loadingscreen/blob/master/LICENSE
+
+-->
+
+<!DOCTYPE html>
+<html style="margin: 1px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Server Loading</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Features-Clean.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/1dbacefadd.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: rgb(13,14,24);">
+    <div class="features-clean" style="background-color: rgba(255,255,255,0);">
+        <div class="container">
+            
+            
+           
+        </div>           
+         <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+      <source src="assets/music/background.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+  </audio>
+
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      // Adjust background music volume (0.0 to 1.0)
+      const music = document.getElementById('background-music');
+      music.volume = 0.5; // 20% volume
+  </script>
+
+    <!-- Change the video ID below -->
+    <iframe id="music-video" allowfullscreen="" frameborder="0" width="0" height="0" src="https://youtu.be/EZOELHi5X_M"></iframe>
+
+    <!-- Change the video ID below -->
+	<script>
+
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('music-video', {
+          height: '0',
+          width: '0',
+          videoId: 'KVh183DK1-4',
+          events: {
+            'onReady': function (event) {
+				event.target.setVolume(5);
+				event.target.playVideo();
+			}
+          }
+        });
+      }
+
+    </script>
+
+</body>
+
+</html>
